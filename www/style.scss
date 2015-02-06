@@ -1,0 +1,379 @@
+/* Scss Document */
+
+/*Varaiables */
+
+	/*Colours*/
+	$primaryColour:#382F29; /* Dark Brown */
+	$secondaryColour:#867467; /* Light Brown */
+	$lightColour:#FFF; /* White */
+	$darkColour:#000; /* Black */
+	
+	/*Other*/
+	$navBigHeight:100px;
+	$navSmallHeight:50px;
+	
+	$wrapWidth:750px;
+	
+	$imagePadding:10px;
+
+
+/* Mixins */
+	@mixin listStyle() {
+		list-style:none;
+			li::before{
+				content:'\2014'; /* a long dash */
+				margin-right:10px;
+				margin-left:5px;
+			}
+	}
+	
+/* Load Fonts */	
+@import url(http://fonts.googleapis.com/css?family=Lato:300|Amatic+SC);
+
+/* Using fonts 
+font-family: 'Lato', sans-serif;
+font-family: 'Amatic SC', cursive;
+*/
+*{
+	padding:0px;
+	margin:0px;
+}
+body{
+	padding-top:$navBigHeight;
+	font-family: 'Lato', sans-serif;
+	background-color:$lightColour;
+	background-image:url(noise.png);
+	background-repeat:repeat;
+	color:$darkColour;
+}
+h1,h2{
+	font-family: 'Amatic SC', cursive;
+	color:$primaryColour;
+}
+h1{
+	font-size:28pt;
+}
+h2{
+	font-size:20pt;
+	padding-top:10px;
+	font-style:normal;
+}
+
+nav{
+	z-index:2;
+	background-color:$primaryColour;
+	height:$navBigHeight;
+	position:fixed;
+	margin-top:-$navBigHeight;
+	width:100%;
+	text-align:right;
+	border-top:5px solid $secondaryColour;
+	border-bottom:5px solid $secondaryColour;
+	a{
+		display:inline-block;
+		padding-right:15px;
+		padding-left:15px;
+		text-decoration: none;
+		color:$lightColour;
+		vertical-align:middle;
+		line-height:$navBigHeight;
+		height:100%;
+		animation: fadein 3s;
+		
+		&[href="index.html"]{
+			float:left;
+			img{
+				height:100%;
+				filter: invert(100%);
+			}
+		}
+		
+		&:hover{
+			background-color:$secondaryColour;
+		}
+	}
+
+}
+
+a >[name]{
+	display: block;
+	position: relative;
+	top: -$navSmallHeight;
+	/*visibility: hidden;*/
+}
+	section::before {
+		display:block;
+		content: "";
+		background-color:$secondaryColour;
+		background-image:url(noise.png);
+		background-repeat:repeat;
+		height:20px;
+	}
+	section:last-of-type::after {
+		margin-top:10px;
+		display:block;
+		content: "";
+		background-color:$secondaryColour;
+		background-image:url(noise.png);
+		background-repeat:repeat;
+		height:20px;
+	}
+	
+
+	section,header{
+		/*min-height:600px;*/
+		.wrap{
+			margin:auto;
+			@media all and (min-width: $wrapWidth) {
+				width:$wrapWidth;
+			}
+			@media all and (max-width: $wrapWidth) {
+				width:100%;
+			}
+		}
+		&[data-title="Info"]{
+			ul{
+				/*@include listStyle();*/
+				list-style:none;
+				li{
+					font-size:18px;
+				}
+			}
+			img{
+				width:0.3*$wrapWidth;
+				/*height:100%;*/
+			}
+			min-height:300px;
+		}
+		&[data-title="Chef"]{
+			p{
+				margin-bottom:1em;
+				span{
+					/*font-family: 'Amatic SC', cursive;*/
+					color:$primaryColour;
+					font-weight:bold;
+				}
+			}
+			ul{
+				@include listStyle();
+			}
+		}
+		&[data-title="Contact"]{
+			/*Variables*/
+			$daysOffset:450;
+			
+			ul{
+				list-style-type:none;
+				li{
+					abbr{
+						width:50px;
+						display:inline-block;	
+					}
+					span{
+						margin-left:$daysOffset;
+					}
+				}
+			}
+		}
+		&[data-title="Menu"]{
+			/*Variables*/
+			$menuOffset:450;
+			
+			h2:not(:first-of-type){
+				clear:both;
+			}
+			
+			#printText{
+				margin-top:30px;
+				color:$primaryColour;
+			}
+	
+			ul{
+				list-style-type:none;
+				li{
+					text-align:right;
+					span:not(:first-of-type){
+						&:before{
+							content:"$";
+						}
+					}
+					span:nth-child(3){
+						&:before{
+							content:" / $";
+						}
+					}
+					span:first-of-type{
+						float:left;
+						display:inline-block;												
+					}
+					.marketPrice{
+						&:before{
+							display:none;
+						}
+					}
+				}				
+			}
+		}
+	}
+[data-title="Location"]{
+	width:50%;
+}
+header {
+	background-image:url(food.jpg);
+	background-size:cover;
+	background-attachment: fixed;
+	background-position:center top;
+	min-height:300px;
+	
+	/* Vertical Center Child */
+		/* This parent can be any width and height */
+		
+		  text-align: center;
+		
+		 
+		/* The ghost, nudged to maintain perfect centering */
+		&::before {
+		  content: '';
+		  display: inline-block;
+		  height: 100%;
+		  vertical-align: middle;
+		  margin-right: -0.25em; /* Adjusts for spacing */
+		}
+	
+	.wrap{
+		font-size:22px;
+		color:$lightColour;
+		text-shadow:1px 1px 3px $darkColour,
+					1px 2px 3px $darkColour,
+					2px 1px 3px $darkColour;
+		animation: fadein 5s;
+		/*Vertical Center */
+		display: inline-block;
+	  	vertical-align: middle;
+		#arrow{
+			height:60px;
+			animation: arrow 6s infinite;
+			}	
+		img{			
+			filter:invert(1) drop-shadow(2px 2px 5px rgba(0,0,0,0.9)) ;
+			position:relative;				
+		}
+		#logo{
+				height:300px;
+				position:initial;
+				
+			}	 	
+	}
+}
+#map {
+	width:100%;
+	height:300px;
+}
+
+.right{
+	float:right;
+	margin-left:$imagePadding;
+	margin-top:$imagePadding;
+	margin-bottom:$imagePadding;
+	&::after{
+		content: "";
+		visibility: hidden; 
+		display: block; 
+		clear: both;
+		height: 0; 
+	}	
+}
+.left{
+	float:left;
+	margin-right:$imagePadding;
+	margin-top:$imagePadding;
+	margin-bottom:$imagePadding;
+	&::after{
+		content: "";
+		visibility: hidden; 
+		display: block; 
+		clear: both;
+		height: 0; 
+	}
+}
+
+/*Animations */
+
+	@keyframes fadein {
+		from {
+			opacity:0;
+		}
+		to {
+			opacity:1;
+		}
+	}
+	
+	@keyframes arrow {
+		from {
+			top:0px;
+		}
+		to {
+			top:20px;
+		}
+	}
+	
+/* Scrollbar */	
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: $lightColour;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
+}
+::-webkit-scrollbar-thumb {
+    background: #CCC;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: $secondaryColour;
+}
+::-webkit-scrollbar-thumb:active {
+    background: $primaryColour;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/*Selections*/
+::selection {
+  background: $secondaryColour; /* WebKit/Blink Browsers */
+}
+
+.printOnly{
+		display:none;
+		width:100px;
+		margin:auto;
+		padding:10px;
+	}
+	
+@media print{
+	body{
+		padding-top:0;
+		background-image:none;
+	}
+	.printOnly{
+		display:block;
+	}
+	#printText{
+		display:none;
+	}
+	[data-title="Menu"]{
+		border-top:$secondaryColour 10px solid;
+		border-bottom:$secondaryColour 10px solid;		
+		&::before{
+			content:"";
+			height:0px;
+			display:none;
+		}
+		.wrap{
+			width:100%;
+		}
+	}
+	header, nav, section:not([data-title="Menu"]){
+		display:none;
+		padding-top:0px;
+	}
+}

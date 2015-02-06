@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>3141</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUtZQaSoCC2Z5_12i3YPS39ZcBcBSiyds&amp;sensor=false"></script>
+</head>
+<body>
+<img class="printOnly" draggable="false" alt="Logo" src="logo.svg" />
+<a name="index"></a>
+    <nav>
+        <a href="index.html"><img draggable="false" alt="Logo" src="logo.svg" /></a> 
+        <a href="menu.html">Menu</a>
+        <a href="chef.html">Chef</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html">Location</a>
+    </nav>
+    <header>
+        <a href="info.html">
+            <div class="wrap">
+                <img draggable="false" id="logo" alt="Logo" src="logo.svg" />
+                <p>It's a <!-- Day of Week goes here -->. Come say Hi - We're <!-- Open Closed Status --> </p>
+                <img id="arrow" draggable="false" alt="Continue through site" src="downArrow.svg" />            
+            </div>
+        </a>
+    </header>
+    <a name="info"></a>
+    <section data-title="Info">
+        <div class="wrap">
+            <h1>3141</h1>
+            <img class="right" src="table.jpg" alt="Image of inside of shop"/>
+            <ul>
+            	<li>Restaurant 3141 is an elegant, new  restaurant situated just outside the heart of the city.</li>
+                <li>Located in South Yarra, we are ideally positioned.</li>
+	            <li>Here we pride ourselves on ensuring you have a wonderful experience.</li>             
+        	</ul>
+        </div>
+    </section>
+    <a name="menu"></a>
+    <section data-title="Menu">
+        <div class="wrap">
+            <h1>Menu</h1>
+            <img width="300" class="left" src="food2.jpg" alt="Image of food"/>         	
+            	<h2>Entr&eacute;e</h2>
+                	<ul>
+                        <li><span>Half a dozen Tasmanian Oysters</span><span>12</span></li>
+                        <li><span>Four Tastes <small>Your waiter will advise</small></span><span>15</span></li>
+                        <li><span>Warm Duck and Orange Salad</span><span>15</span></li>
+                        <li><span>Soup of the day</span><span>12</span></li>
+                        <li><span>Salt and Pepper Calamari</span><span>14</span></li>
+                    </ul>
+                <h2>Mains</h2>
+                    <ul>
+                        <li><span>Lobster Ravioli</span><span>28</span></li>
+                        <li><span>Seafood Linguine</span><span>24</span><span>32</span></li>
+                        <li><span>Grilled Beef <small>with Asian vegetables and apple sauce</small></span><span>34</span></li>
+                        <li><span>Roast Pork <small>with vegetables and apple sauce</small></span><span>30</span></li>
+                        <li><span>Fish of the day</span><span class="marketPrice">Market Price</span></li>
+                        <li><span>Old-fashioned Chicken pie <small>with mushrooms and a side of vegetables</small></span><span>25</span></li>
+                        <li><span>Vegetable Risotto</span><span>17</span><span>24</span></li>                                        
+                    </ul>
+            	<h2>Dessert</h2>
+                	<ul>
+                    	<li><span>Mixed Sorbets <small>ask your waiter for today's selections</small></span><span>9</span></li>
+                        <li><span>Lemon Tart <small>with passionfruit and raspberry coulis</small></span><span>12</span></li>
+                        <li><span>Strawberry Pavlova <small>with cream</small></span><span>10</span></li>
+                        <li><span>Cheese and Fruit platter</span><span>14</span></li>
+                        <li><span>Warm Chocolate Pudding <small>with macadamia ice-cream</small></span><span>12</span></li>
+                	</ul>                        
+            	<h2>Sides</h2>
+                	<ul>
+                    	<li><span>Steamed Beans</span><span>7</span></li>
+                        <li><span>Pear, Walnut and Rocket salad</span><span>10</span></li>
+                        <li><span>House Fries</span><span>7</span></li>
+                        <li><span>Warm Olives</span><span>5</span></li>
+        			</ul>
+	        <p id="printText"><a href="javascript:window.print();">Print the Menu</a></p>
+        </div>
+        
+    </section>
+    <a name="chef"></a>
+    <section data-title="Chef">
+        <div class="wrap">
+            <h1>Chef</h1>
+            <img width="200" class="right" src="fred.jpg" alt="Portrait of Chief, Frederick Wiliamson"/>
+            <p>
+              <span>Frederick Williamson</span>, is a self proclaimed foodi&eacute; and talented chief. 
+            </p>
+            <p>
+              <span>From</span> a young age, Frederick was curious about other foods and cultures. It was this passion that lead him to begin experimenting with different produce, herbs and spices to create fabulous dishes for his family.
+            </p>
+            <p>
+              <span>Recently</span>, his career has exploded. Frederick has be invited to:
+                  <ul>
+                      <li>travel the world</li>
+                      <li>work in the best restaurants</li>
+                      <li>work alongside the world's best chiefs</li>
+                  </ul>
+            </p>
+            <p>
+              <span>Now</span>, Frederick and his wife have decided to settle down in Melbourne and open their debut restaurant.
+            </p>
+            <p>
+              <span>Frederick</span> hopes to see you soon.
+            </p>
+        </div>
+    </section>
+    <a name="contact"></a>
+    <section data-title="Contact">
+        <div class="wrap">
+            <h1>Contact</h1>
+                <div class="right" data-title="Location">
+                    <h2>Location</h2>
+                    <div id="map"></div>
+                </div>
+                <h2>Address</h2>
+                <address>        	    
+                    <strong>3141.</strong><br>
+                    123 A Street<br>
+                    South Yarra, VIC 3141<br>
+                   
+                    <abbr title="Phone">P:</abbr> (03) 9621 1840<br>
+                    <abbr title="Fax">F:</abbr> (03) 9621 1841
+               </address> 
+               <h2>Email</h2>
+               <address>
+                    <a href="mailto:3141@bigpond.net.au">3141@bigpond.net.au</a>
+                </address>
+                <h2>Hours</h2>
+                <ul>
+                    <li><abbr title="Sunday">Sun:</abbr><span>11:30 AM to 12:AM</span></li>
+                    <li><abbr title="Monday">Mon:</abbr><span>11:30 AM to 12:AM</span></li>
+                    <li><abbr title="Tuesday">Tue:</abbr><span>11:30 AM to 12:AM</span></li>
+                    <li><abbr title="Wednesday">Wed:</abbr><span>11:30 AM to 12:AM</span></li>
+                    <li><abbr title="Thursday">Thur:</abbr><span>11:30 AM to 12:AM</span></li>
+                    <li><abbr title="Friday">Fri:</abbr><span>11:30 AM to 12:AM</span></li>
+                    <li><abbr title="Saturday">Sat:</abbr><span>11:30 AM to 12:AM</span></li>
+                </ul>                                   
+        </div>
+    </section>
+    <a name="location"></a>
+    
+    <script src="min/general.min.js"></script> 
+</body>
+</html>
