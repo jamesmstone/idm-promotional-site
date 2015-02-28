@@ -1,9 +1,0 @@
-Website
-http://3141.cf
-
-SFTP server details
-Username:	idm-promotional-site
-Server:		pagodabox.com
-Port:		22
-Password:	IDMPassword
-App Dir:	code
